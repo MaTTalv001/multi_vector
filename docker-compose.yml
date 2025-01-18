@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  streamlit:
+    build: .
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./src:/app/src
+      - ./data:/app/data
+    environment:
+      - ENV_FILE=.env
+    command: streamlit run src/main.py
